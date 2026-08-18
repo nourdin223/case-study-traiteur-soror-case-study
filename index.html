@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Case Study — Traiteur Soror | NOUREDDINE Pro</title>
+  <meta name="description" content="Étude de cas : création d'une présence digitale professionnelle pour Traiteur Soror à Meknès par NOUREDDINE Pro.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #070707;
+      --black-2: #101010;
+      --card: #151515;
+      --gold: #d4af37;
+      --gold-light: #f0d777;
+      --cream: #f8f5ec;
+      --muted: #aaa69c;
+      --border: rgba(212,175,55,.18);
+      --max: 1180px;
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background: var(--black);
+      color: var(--cream);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
+
+    .gold {
+      color: var(--gold);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .section {
+      padding: 105px 0;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.2;
+      margin-bottom: 22px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      z-index: 50;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 18px 0;
+      background: rgba(7,7,7,.78);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .05em;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .nav-link {
+      color: #d7d3c9;
+      font-size: .9rem;
+      transition: .25s;
+    }
+
+    .nav-link:hover {
+      color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding: 150px 0 80px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 75% 20%, rgba(212,175,55,.14), transparent 30%),
+        radial-gradient(circle at 15% 80%, rgba(212,175,55,.07), transparent 30%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      line-height: .98;
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      color: #c4c0b7;
+      font-size: 1.12rem;
+      max-width: 600px;
+      margin-bottom: 34px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .meta-item {
+      padding: 17px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .meta-item small {
+      display: block;
+      color: #77736b;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .meta-item strong {
+      display: block;
+      margin-top: 3px;
+      font-size: .92rem;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .browser {
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 30px 80px rgba(0,0,0,.5);
+    }
+
+    .browser-top {
+      height: 42px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 15px;
+      background: #191919;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #555;
+    }
+
+    .site-preview {
+      min-height: 470px;
+      display: grid;
+      place-items: center;
+      padding: 30px;
+      background:
+        linear-gradient(135deg, rgba(212,175,55,.12), transparent 45%),
+        #0d0d0d;
+    }
+
+    .preview-placeholder {
+      width: 100%;
+      min-height: 400px;
+      border: 1px dashed rgba(212,175,55,.35);
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--muted);
+      padding: 30px;
+    }
+
+    .preview-placeholder strong {
+      display: block;
+      color: var(--gold);
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: .9rem;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--cream);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* CONTENT */
+    .dark-section {
+      background: #0d0d0d;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 70px;
+    }
+
+    .number {
+      color: var(--gold);
+      font-size: .85rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .content p {
+      color: #bbb7ae;
+      margin-bottom: 18px;
+    }
+
+    .quote {
+      margin-top: 28px;
+      padding: 28px;
+      border-left: 3px solid var(--gold);
+      background: rgba(212,175,55,.05);
+      font-family: "Playfair Display", serif;
+      font-size: 1.45rem;
+      color: #eee9dc;
+    }
+
+    /* BEFORE AFTER */
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 45px;
+    }
+
+    .ba-card {
+      padding: 35px;
+      min-height: 300px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+
+    .ba-card.after {
+      background: linear-gradient(145deg, rgba(212,175,55,.12), #151515);
+    }
+
+    .ba-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      margin: 15px 0;
+    }
+
+    .ba-list {
+      list-style: none;
+      color: var(--muted);
+    }
+
+    .ba-list li {
+      margin: 7px 0;
+    }
+
+    .ba-list li::before {
+      content: "— ";
+      color: var(--gold);
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 45px;
+    }
+
+    .card {
+      padding: 27px 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(212,175,55,.5);
+    }
+
+    .icon {
+      font-size: 1.7rem;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      font-size: 1.02rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.4fr .6fr;
+      gap: 16px;
+      margin-top: 45px;
+    }
+
+    .shot {
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: #151515;
+    }
+
+    .shot.large {
+      min-height: 520px;
+    }
+
+    .shot img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .shot-placeholder {
+      height: 100%;
+      min-height: inherit;
+      display: grid;
+      place-items: center;
+      padding: 30px;
+      text-align: center;
+      color: var(--muted);
+      background: linear-gradient(135deg, #171717, #0d0d0d);
+    }
+
+    .shot-placeholder span {
+      display: block;
+      color: var(--gold);
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .mobile-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    /* COLORS / TECH */
+    .palette {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .swatch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px 10px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+      font-size: .8rem;
+    }
+
+    .swatch i {
+      width: 28px;
+      height: 28px;
+      display: block;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.15);
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 35px;
+    }
+
+    .tech {
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: #ddd8cc;
+      background: var(--card);
+      font-size: .85rem;
+    }
+
+    /* FLOW */
+    .flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 45px;
+    }
+
+    .flow-item {
+      padding: 15px 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--card);
+      font-weight: 700;
+    }
+
+    .arrow {
+      color: var(--gold);
+      font-size: 1.4rem;
+    }
+
+    /* TESTIMONIAL */
+    .testimonial {
+      margin-top: 45px;
+      padding: 42px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(212,175,55,.1), rgba(255,255,255,.02));
+      text-align: center;
+    }
+
+    .testimonial .quote-mark {
+      color: var(--gold);
+      font-family: serif;
+      font-size: 4rem;
+      line-height: .7;
+    }
+
+    .testimonial p {
+      max-width: 760px;
+      margin: 20px auto;
+      font-family: "Playfair Display", serif;
+      font-size: 1.45rem;
+      color: #e7e1d5;
+    }
+
+    .testimonial small {
+      color: var(--muted);
+    }
+
+    /* CTA */
+    .cta {
+      padding: 120px 0;
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(212,175,55,.14), transparent 42%),
+        #070707;
+    }
+
+    .cta h2 {
+      max-width: 850px;
+      margin: 0 auto 20px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.3rem, 6vw, 4.7rem);
+      line-height: 1.1;
+    }
+
+    .cta p {
+      max-width: 680px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: #77736b;
+      font-size: .85rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .shot.large {
+        min-height: 400px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      nav {
+        padding: 13px 0;
+      }
+
+      .nav-link {
+        display: none;
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .meta,
+      .before-after,
+      .cards,
+      .mobile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .site-preview {
+        min-height: 300px;
+        padding: 15px;
+      }
+
+      .preview-placeholder {
+        min-height: 260px;
+      }
+
+      .ba-card {
+        min-height: auto;
+      }
+
+      .testimonial {
+        padding: 30px 20px;
+      }
+
+      .testimonial p {
+        font-size: 1.15rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+      /* =========================================
+   BUSINESS VALUE
+========================================= */
+
+.business-value {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(212, 175, 55, .08),
+      transparent 45%
+    ),
+    #0b0b0b;
+}
+
+.business-value .section-intro {
+  max-width: 820px;
+}
+
+.business-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.business-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+
+  transform: scaleX(0);
+  transition: .4s ease;
+}
+
+.business-card:hover::before {
+  transform: scaleX(1);
+}
+
+.business-card .icon {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  color: var(--gold);
+  font-size: .8rem;
+  font-weight: 800;
+
+  margin-bottom: 22px;
+}
+
+.business-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.35rem;
+  margin-bottom: 15px;
+}
+
+.business-card p {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.8;
+}
+
+.business-quote {
+  max-width: 900px;
+  margin: 70px auto 0;
+
+  padding: 35px 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  text-align: center;
+}
+
+.business-quote p {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  line-height: 1.6;
+  color: #eee9dc;
+}
+
+.quote-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold)
+  );
+}
+
+.quote-line:last-child {
+  background: linear-gradient(
+    90deg,
+    var(--gold),
+    transparent
+  );
+}
+
+@media (max-width: 900px) {
+
+  .business-quote {
+    flex-direction: column;
+  }
+
+  .quote-line {
+    width: 100%;
+  }
+
+}
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html">NOUREDDINE <span>Pro</span></a>
+      <a class="nav-link" href="../index.html#projects">← Retour aux projets</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+
+      <div class="reveal">
+        <div class="eyebrow">Case Study 01</div>
+
+        <h1>
+          Traiteur<br>
+          <span class="gold">Soror</span>
+        </h1>
+
+        <p class="hero-sub">
+          Création d'une présence digitale professionnelle pour un traiteur
+          événementiel à Meknès.
+        </p>
+
+        <div class="btns">
+          <a class="btn btn-primary"
+             href="https://nourdin223.github.io/Traiteur-Soror/"
+             target="_blank" rel="noopener">
+            Voir le site en ligne ↗
+          </a>
+
+          <a class="btn btn-outline"
+             href="https://wa.me/212676484479?text=Bonjour%20NOUREDDINE%20Pro%2C%20je%20souhaite%20parler%20d%27un%20projet%20web."
+             target="_blank" rel="noopener">
+            Mon projet →
+          </a>
+        </div>
+
+        <div class="meta">
+          <div class="meta-item">
+            <small>Client</small>
+            <strong>Traiteur Soror</strong>
+          </div>
+
+          <div class="meta-item">
+            <small>Secteur</small>
+            <strong>Traiteur & Événements</strong>
+          </div>
+
+          <div class="meta-item">
+            <small>Localisation</small>
+            <strong>Meknès, Maroc</strong>
+          </div>
+
+          <div class="meta-item">
+            <small>Service</small>
+            <strong>Web Design & Development</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="browser">
+          <div class="browser-top">
+            <span class="dot" ></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+
+          <div class="product-image">
+                <img src="i1.png" alt="Fête de diplôme et réception à Meknès - Traiteur Soror Meknes">
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section dark-section">
+      <div class="container two-col reveal">
+
+        <div>
+          <div class="number">01 — LE CONTEXTE</div>
+          <h2 class="section-title">Centraliser une présence digitale déjà existante.</h2>
+        </div>
+
+        <div class="content">
+          <p>
+            Traiteur Soror est un professionnel du secteur de la restauration
+            et de l'événementiel à Meknès.
+          </p>
+
+          <p>
+            Avant la création du projet, l'activité ne disposait pas d'un
+            site web dédié. Les photos et vidéos des prestations étaient
+            principalement publiées sur Instagram et Facebook, de manière
+            répartie entre les différentes plateformes.
+          </p>
+
+          <p>
+            L'objectif était donc de créer un espace digital centralisé
+            permettant de présenter l'activité de manière plus claire,
+            professionnelle et accessible.
+          </p>
+
+          <div class="quote">
+            Transformer des contenus dispersés en une expérience digitale
+            claire, élégante et accessible.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+
+        <div class="number">AVANT → APRÈS</div>
+        <h2 class="section-title">D'une présence dispersée à une plateforme unique.</h2>
+
+        <div class="before-after">
+
+          <article class="ba-card">
+            <div class="eyebrow">Avant</div>
+            <h3>Contenu dispersé</h3>
+
+            <ul class="ba-list">
+              <li>Instagram</li>
+              <li>Facebook</li>
+              <li>Photos publiées séparément</li>
+              <li>Vidéos réparties sur les réseaux</li>
+              <li>Pas de point central dédié au projet</li>
+            </ul>
+          </article>
+
+          <article class="ba-card after">
+            <div class="eyebrow">Après</div>
+            <h3>Présence centralisée</h3>
+
+            <ul class="ba-list">
+              <li>Site web professionnel</li>
+              <li>Services présentés clairement</li>
+              <li>Galerie des réalisations</li>
+              <li>Contact direct via WhatsApp</li>
+              <li>Localisation et informations accessibles</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section">
+      <div class="container reveal">
+
+        <div class="number">02 — LE DÉFI</div>
+        <h2 class="section-title">Créer plus qu'un site esthétique.</h2>
+
+        <div class="content section-intro">
+          <p>
+            Les informations et les contenus existaient déjà, mais ils étaient
+            dispersés sur plusieurs réseaux sociaux.
+          </p>
+
+          <p>
+            Le défi n'était donc pas simplement de créer un site esthétique.
+            Il fallait transformer ces contenus en une expérience cohérente
+            permettant à un visiteur de comprendre rapidement l'activité,
+            découvrir les services et accéder facilement aux moyens de contact.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+
+        <div class="number">03 — LES OBJECTIFS</div>
+        <h2 class="section-title">Quatre priorités pour le projet.</h2>
+
+        <div class="cards">
+
+          <article class="card">
+            <div class="icon">🎯</div>
+            <h3>Centraliser</h3>
+            <p>Réunir les informations importantes dans un seul espace digital.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📸</div>
+            <h3>Valoriser</h3>
+            <p>Mettre en valeur les prestations, photos et réalisations.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📱</div>
+            <h3>Simplifier</h3>
+            <p>Offrir une expérience claire et adaptée aux smartphones.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">💬</div>
+            <h3>Faciliter le contact</h3>
+            <p>Permettre au visiteur de contacter directement l'entreprise.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+<!-- ================================
+     VALEUR BUSINESS — 3 ARGUMENTS
+================================= -->
+<section class="section business-value">
+  <div class="container reveal">
+
+    <div class="number">VALEUR BUSINESS</div>
+
+    <h2 class="section-title">
+      Un site qui ne se contente pas de présenter l'activité.
+      Il renforce la confiance.
+    </h2>
+
+    <p class="section-intro">
+      Pour une activité événementielle, la première impression peut faire
+      toute la différence. Le site a donc été pensé comme un véritable
+      support commercial : présenter l'activité avec sérieux, rassurer
+      le prospect et faciliter le passage à la demande de devis.
+    </p>
+
+    <div class="cards">
+
+      <!-- 01 -->
+      <article class="card business-card">
+        <div class="icon">01</div>
+
+        <h3>
+          Une image plus professionnelle
+        </h3>
+
+        <p>
+          Lorsqu'un prospect découvre une activité professionnelle,
+          il ne regarde pas uniquement les prestations. Il évalue aussi
+          le sérieux et la crédibilité de l'entreprise.
+        </p>
+
+        <p>
+          Le site offre ainsi à Traiteur Soror un espace professionnel
+          où ses services, réalisations, photos et informations sont
+          présentés de manière claire et structurée.
+        </p>
+      </article>
+
+
+      <!-- 02 -->
+      <article class="card business-card">
+        <div class="icon">02</div>
+
+        <h3>
+          Plus de confiance avant le premier contact
+        </h3>
+
+        <p>
+          Au lieu d'envoyer plusieurs photos et informations séparément
+          sur WhatsApp ou les réseaux sociaux, le prospect peut découvrir
+          l'activité dans un seul espace.
+        </p>
+
+        <p>
+          Cette présentation permet au client potentiel de mieux comprendre
+          l'offre et de se faire une première impression avant même de
+          prendre contact.
+        </p>
+      </article>
+
+
+      <!-- 03 -->
+      <article class="card business-card">
+        <div class="icon">03</div>
+
+        <h3>
+          Être mieux préparé pour les grandes demandes
+        </h3>
+
+        <p>
+          Lorsqu'un prospect recherche un traiteur pour un événement
+          important, il doit pouvoir évaluer rapidement les services,
+          les réalisations et le sérieux du prestataire.
+        </p>
+
+        <p>
+          Le site devient alors un support commercial permettant de présenter
+          l'activité de manière professionnelle et de faciliter les demandes
+          de devis pour des prestations plus importantes.
+        </p>
+      </article>
+
+    </div>
+
+
+    <!-- MESSAGE FORT -->
+    <div class="business-quote">
+
+      <span class="quote-line"></span>
+
+      <p>
+        Le site ne garantit pas automatiquement plus de ventes.
+        Il donne surtout à l'entreprise une présence professionnelle
+        capable de créer une meilleure première impression,
+        renforcer la confiance et faciliter le passage au contact.
+      </p>
+
+      <span class="quote-line"></span>
+
+    </div>
+
+  </div>
+</section>
+    <section class="section dark-section">
+      <div class="container reveal">
+
+        <div class="number">04 — LA SOLUTION</div>
+        <h2 class="section-title">Une vitrine digitale pensée autour de l'activité.</h2>
+
+        <p class="section-intro">
+          J'ai conçu et développé un site vitrine personnalisé autour de
+          l'activité de Traiteur Soror, avec une approche orientée vers la
+          présentation des prestations et la facilité de contact.
+        </p>
+
+        <div class="cards">
+
+          <article class="card">
+            <div class="icon">🏠</div>
+            <h3>Accueil</h3>
+            <p>Une première impression claire avec des appels à l'action.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🍽️</div>
+            <h3>Services</h3>
+            <p>Les prestations sont présentées de manière structurée.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📷</div>
+            <h3>Galerie</h3>
+            <p>Les réalisations sont mises en avant visuellement.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🎥</div>
+            <h3>Vidéos</h3>
+            <p>Les contenus vidéo peuvent montrer l'ambiance des événements.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">💬</div>
+            <h3>WhatsApp</h3>
+            <p>Un accès direct au contact et à la demande de devis.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📍</div>
+            <h3>Localisation</h3>
+            <p>Les visiteurs peuvent retrouver facilement l'activité.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+
+        <div class="number">05 — THE EXPERIENCE</div>
+        <h2 class="section-title">Une expérience pensée pour desktop et mobile.</h2>
+
+        <p class="section-intro">
+          Le design a été pensé pour conserver une navigation claire sur
+          différents écrans et permettre au visiteur d'accéder rapidement
+          aux informations importantes.
+        </p>
+
+        <div class="gallery">
+
+          <div class="shot ">
+             <div class="product-image">
+                <img src="i1.png" alt="Fête de diplôme et réception à Meknès - Traiteur Soror Meknes">
+            </div>
+          </div>
+
+          
+
+        </div>
+
+        <div class="mobile-grid">
+
+          <div class="shot">
+            <div class="shot-placeholder">
+              <div class="product-image">
+                <img src="i2.jpeg" alt="Fête de diplôme et réception à Meknès - Traiteur Soror Meknes">
+            </div>
+            </div>
+          </div>
+              
+            <div class="product-image">
+                <img src="i3.jpeg" alt="Fête de diplôme et réception à Meknès - Traiteur Soror Meknes">
+            </div>
+            
+          </div>
+          
+      
+
+        </div>
+
+      </div>
+    </section>
+    <section class="section">
+      <div class="container reveal">
+
+        <div class="number">06 — TECHNOLOGIES</div>
+        <h2 class="section-title">Technologies & intégrations.</h2>
+
+        <p class="section-intro">
+          Le projet a été développé avec une approche légère et adaptée à
+          un site vitrine moderne.
+        </p>
+
+        <div class="tech-list">
+          <span class="tech">HTML5</span>
+          <span class="tech">CSS3</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">Responsive Design</span>
+          <span class="tech">SEO</span>
+          <span class="tech">Schema.org</span>
+          <span class="tech">WhatsApp Integration</span>
+          <span class="tech">Google Maps</span>
+          <span class="tech">GitHub Pages</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section dark-section">
+      <div class="container reveal">
+
+        <div class="number">07 — USER EXPERIENCE</div>
+        <h2 class="section-title">De la découverte au contact.</h2>
+
+        <p class="section-intro">
+          Le parcours a été pensé pour réduire les frictions et guider
+          progressivement le visiteur vers la prise de contact.
+        </p>
+
+        <div class="flow">
+          <div class="flow-item">Découvrir</div>
+          <span class="arrow">→</span>
+          <div class="flow-item">Comprendre</div>
+          <span class="arrow">→</span>
+          <div class="flow-item">Voir les réalisations</div>
+          <span class="arrow">→</span>
+          <div class="flow-item">Être rassuré</div>
+          <span class="arrow">→</span>
+          <div class="flow-item">Contacter</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+
+        <div class="number">08 — LE RÉSULTAT</div>
+        <h2 class="section-title">Une présence digitale désormais centralisée.</h2>
+
+        <div class="content section-intro">
+          <p>
+            Le projet a transformé une présence digitale auparavant répartie
+            entre Instagram et Facebook en une plateforme web centralisée.
+          </p>
+
+          <p>
+            Les visiteurs disposent désormais d'un espace unique pour
+            découvrir les services, consulter les réalisations et accéder
+            directement aux moyens de contact.
+          </p>
+        </div>
+
+        <div class="before-after">
+
+          <article class="ba-card">
+            <div class="eyebrow">Point de départ</div>
+            <h3>Réseaux sociaux</h3>
+            <p style="color:var(--muted)">
+              Contenus utiles mais répartis sur plusieurs plateformes.
+            </p>
+          </article>
+
+          <article class="ba-card after">
+            <div class="eyebrow">Livraison</div>
+            <h3>Plateforme web</h3>
+            <p style="color:var(--muted)">
+              Une vitrine digitale unique, accessible depuis mobile et ordinateur.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section dark-section">
+      <div class="container reveal">
+
+        <div class="number">9 — TÉMOIGNAGE</div>
+        <h2 class="section-title">Le mot du client.</h2>
+
+        <div class="testimonial">
+          <div class="quote-mark">“</div>
+
+          <!-- Remplace ce texte par le vrai témoignage du client après son accord -->
+          <p>
+            Témoignage du client à ajouter après validation.
+          </p>
+
+          <small>
+            Traiteur Soror — Meknès
+          </small>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container reveal">
+
+        <div class="eyebrow">NOUREDDINE Pro</div>
+
+        <h2>
+          Votre projet mérite une présence digitale à la hauteur de votre activité.
+        </h2>
+
+        <p>
+          Vous avez une entreprise, un commerce ou une activité locale et
+          souhaitez présenter votre service de manière professionnelle sur Internet ?
+        </p>
+
+        <a class="btn btn-primary"
+           href="https://wa.me/212676484479?text=Bonjour%20NOUREDDINE%20Pro%2C%20je%20souhaite%20parler%20d%27un%20projet%20web."
+           target="_blank" rel="noopener">
+          Parlons de votre projet →
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        © <span id="year"></span> <strong>NOUREDDINE Pro</strong>
+      </div>
+
+      <div>
+        Web Design • Development • Digital Presence
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
