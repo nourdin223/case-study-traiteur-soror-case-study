@@ -535,8 +535,6 @@
     .testimonial small {
       color: var(--muted);
     }
-
-    /* CTA */
     .cta {
       padding: 120px 0;
       text-align: center;
@@ -1402,10 +1400,83 @@ check();
           <div class="quote-mark">“</div>
 
           <!-- Remplace ce texte par le vrai témoignage du client après son accord -->
-          <p>
-            Témoignage du client à ajouter après validation.
-          </p>
+          <div class="audio-container">
+        <div class="audio-header">
+            <div class="icon-pulse">
+                <i class="fa-solid fa-microphone-lines"></i>
+            </div>
+            <h2>Écouter le message vocal</h2>
+            <p>Cliquez sur lecture pour lancer la piste audio.</p>
+        </div>
 
+        <!-- Lecteur audio natif personnalisé en CSS -->
+        <div class="player-wrapper">
+            <audio controls>
+                <!-- Remplacez "votre-audio.mp3" par le lien ou le chemin de votre fichier audio -->
+                <source src="wh.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l'élément audio.
+            </audio>
+        </div>
+    </div>
+          <style>/* Conteneur principal de la carte */
+.audio-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+/* En-tête avec l'icône animée */
+.audio-header h2 {
+    color: #333333;
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.audio-header p {
+    color: #777777;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Animation de l'icône microphone */
+.icon-pulse {
+    width: 60px;
+    height: 60px;
+    background: #764ba2;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 0 rgba(118, 75, 162, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(118, 75, 162, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(118, 75, 162, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(118, 75, 162, 0);
+    }
+}
+
+/* Personnalisation de la zone du lecteur audio */
+.player-wrapper audio {
+    width: 100%;
+    outline: none;
+    border-radius: 30px;
+}</style>
+          <!------------>
           <small>
             Traiteur Soror — Meknès
           </small>
